@@ -4,4 +4,8 @@ export interface IconButtonProps {
   isNeedBorder?: boolean;
   /** Icon圖示 */
   icon: string;
+  /** 圖示大小 */
+  iconSize?: "normal" | "large";
+  /** Icon顏色 */
+  iconColor?: string;
 }

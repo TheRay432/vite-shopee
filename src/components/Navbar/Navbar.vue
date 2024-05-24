@@ -53,7 +53,7 @@ function handleSearch(): void {
             :is-need-border="true"
             @click-event="handleSearch"
           />
-          <IconButton :icon="'bi bi-cart-plus'" :is-need-border="true" />
+          <IconButton :icon="'bi bi-cart-plus'" :icon-size="'large'" />
         </div>
       </div>
     </BaseContainer>
