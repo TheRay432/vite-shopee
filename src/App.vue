@@ -12,7 +12,9 @@ const isHome = computed(() => route.path === "/");
 <template>
   <Navbar />
   <BaseSwiper v-if="isHome" />
-  <BaseContainer>
-    <router-view></router-view>
-  </BaseContainer>
+  <div class="pb-12">
+    <BaseContainer>
+      <router-view></router-view>
+    </BaseContainer>
+  </div>
 </template>
