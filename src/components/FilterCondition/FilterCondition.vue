@@ -2,6 +2,8 @@
 import { ref } from "vue";
 import InputCheclboxGroup from "@/components/Input/InputCheclboxGroup.vue";
 import IconButton from "@/components/IconButton/IconButton.vue";
+import ButtonFill from "@/components/Button/ButtonFill.vue";
+import InputRange from "@/components/Input/InputRange.vue";
 
 /** 假資料,之後call api */
 const condition = ref([
@@ -27,6 +29,10 @@ const condition = ref([
 ]);
 /** 選取的項目 */
 const selectList = ref<string[]>([]);
+/** 套用查詢條件事件 */
+function handelFilter(min: string, max: string): void {
+  console.log("min:", min, "max:", max);
+}
 </script>
 <template>
   <!-- 標題 -->
@@ -38,12 +44,16 @@ const selectList = ref<string[]>([]);
     />
     <p>條件篩選</p>
   </div>
-  <!-- 篩選項目 -->
   <div class="class p-2 mx-2">
+    <!-- 篩選項目 -->
     <template v-for="conditionItem in condition" :key="conditionItem.id">
       <InputCheclboxGroup :data="conditionItem" v-model="selectList" />
     </template>
     <!-- 測試選取項目 -->
     <!-- {{ selectList }} -->
+    <!-- 價格區間元件 -->
+    <InputRange
+      @click-event="(min:string, max: string) => handelFilter(min, max)"
+    />
   </div>
 </template>

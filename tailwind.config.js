@@ -7,6 +7,9 @@ export default {
         orange: "#fb5830",
         lightOrange: "#f97160",
       },
+      boxShadow: {
+        boxOrange: "0 0 1px 5px rgba(251, 88, 48, 0.3)",
+      },
     },
   },
   plugins: [],
