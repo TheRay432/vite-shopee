@@ -20,7 +20,7 @@ function handleClick(): void {
     <input
       :id="id"
       type="checkbox"
-      class="form-checkbox h-4 w-4 text-blue-600 cursor-pointer"
+      class="custom-checkbox cursor-pointer"
       :value="value"
       :name="id"
       :checked="checked"
@@ -28,3 +28,24 @@ function handleClick(): void {
     <p class="text-sm ml-2">{{ value }}</p>
   </div>
 </template>
+
+<style scoped lang="scss">
+.custom-checkbox {
+  @apply appearance-none h-4 w-4 border border-gray-400 rounded-[0.25rem] cursor-pointer transition-colors duration-200 ease-in-out;
+}
+
+.custom-checkbox:checked {
+  @apply bg-red-500 border-red-500 shadow-boxOrange;
+}
+
+.custom-checkbox:checked::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='white' stroke-width='2' d='M4 12l6 6L20 6'/%3E%3C/svg%3E");
+  background-size: 1rem 1rem;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+</style>
