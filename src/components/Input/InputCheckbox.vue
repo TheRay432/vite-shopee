@@ -31,7 +31,7 @@ function handleClick(): void {
 
 <style scoped lang="scss">
 .custom-checkbox {
-  @apply appearance-none h-4 w-4 border border-gray-400 rounded-[0.25rem] cursor-pointer transition-colors duration-200 ease-in-out;
+  @apply appearance-none h-4 w-4 border border-gray-400 rounded-[0.25rem] cursor-pointer;
 }
 
 .custom-checkbox:checked {

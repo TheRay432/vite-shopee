@@ -4,6 +4,7 @@ import BaseInput from "@/components/Input/BaseInput.vue";
 import BaseForm from "@/components/Form/BaseForm.vue";
 import { ref } from "vue";
 import { getLengthValidate } from "@/shared/validate/index";
+import { IButtonSize } from "@/components/Button/enum/index-enum";
 
 const emit = defineEmits<{
   /** 按鈕點擊事件 */
@@ -39,6 +40,10 @@ const handleSubmit = () => {
         />
       </div>
     </div>
-    <ButtonFill class="my-2" :data-option="{ content: '套用' }" />
+    <ButtonFill
+      class="my-2"
+      :size="IButtonSize.full"
+      :data-option="{ content: '套用' }"
+    />
   </BaseForm>
 </template>

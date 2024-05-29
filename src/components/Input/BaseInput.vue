@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ErrorMessage, Field as VField } from "vee-validate";
-import { InputType, type BaseInputProps } from "./interface";
+import { type BaseInputProps } from "./interface";
+import { InputType } from "@/components/Input/enum/index-enum";
 
 const props = withDefaults(defineProps<BaseInputProps>(), {
   /** 預設顯示文字 */

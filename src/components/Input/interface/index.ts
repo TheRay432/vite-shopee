@@ -1,4 +1,5 @@
 import type { RuleExpression } from "vee-validate";
+import type { InputType } from "@/components/Input/enum/index-enum";
 
 // 篩選元件-props類型
 export interface InputCheckboxGroupProps {
@@ -16,18 +17,6 @@ export interface InputCheckboxGroupItem {
   id: string;
   /** 篩選項目名稱  */
   value: string;
-}
-
-/** BaseInput- 類型  */
-export enum InputType {
-  /** 文字 */
-  Text = "text",
-  /** 密碼 */
-  Password = "password",
-  /** 數字 */
-  Number = "number",
-  /** 檔案 */
-  File = "file",
 }
 
 /** 基礎input-props */

@@ -44,7 +44,7 @@ function handelFilter(min: string, max: string): void {
     />
     <p>條件篩選</p>
   </div>
-  <div class="class p-2 mx-2">
+  <div class="p-2 mx-2">
     <!-- 篩選項目 -->
     <template v-for="conditionItem in condition" :key="conditionItem.id">
       <InputCheclboxGroup :data="conditionItem" v-model="selectList" />
