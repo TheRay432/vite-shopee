@@ -4,6 +4,7 @@ import { RouterView, useRoute } from "vue-router";
 import BaseContainer from "@/components/BaseContainer/BaseContainer.vue";
 import BaseSwiper from "@/components/BaseSwiper/BaseSwiper.vue";
 import { computed } from "vue";
+import Loading from "@/components/Loading/Loading.vue";
 
 const route = useRoute();
 const isHome = computed(() => route.path === "/");
@@ -17,4 +18,5 @@ const isHome = computed(() => route.path === "/");
       <router-view></router-view>
     </BaseContainer>
   </div>
+  <Loading />
 </template>

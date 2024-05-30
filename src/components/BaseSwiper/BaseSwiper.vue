@@ -2,9 +2,10 @@
 import "swiper/swiper-bundle.css";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import test1 from "@/assets/image/test1.jpg";
 import { ref } from "vue";
 const images = ref([
-  "https://bruce-fe-ec.web.app/images/banner.png",
+  test1,
   "https://bruce-fe-ec.web.app/images/banner.png",
   "https://bruce-fe-ec.web.app/images/banner.png",
   "https://bruce-fe-ec.web.app/images/banner.png",
