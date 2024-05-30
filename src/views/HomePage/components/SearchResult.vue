@@ -15,6 +15,12 @@ import Paginator from "@/components/Paginator/Paginator.vue";
 import { computed } from "vue";
 import axios from "axios";
 import { getAllProducts } from "@/api/products/products";
+import { useRoute } from "vue-router";
+import { watch } from "vue";
+
+const route = useRoute();
+
+const searchText = ref(route.query.keyword || "");
 
 /** 頁籤 - 預設為綜合排名 */
 const tab = ref(SearchButtonGroupEnum.Composite);
@@ -38,9 +44,15 @@ const isShow = ref(false);
 const currentPage = ref(1);
 /** 每頁顯示幾個產品 */
 const perPage = 20;
+
+watch(
+  () => route.query.keyword,
+  (newVal) => {
+    searchText.value = newVal as string;
+  }
+);
 onMounted(async () => {
   const res = await getAllProducts();
-  console.log(res.data);
   productList.value = res.data;
 
   // productList.value = new Array(99).fill("0").map((_, index) => {
@@ -76,7 +88,10 @@ const displayList = computed(() => {
       :icon-size="'large'"
       :icon-color="'text-black'"
     />
-    <p><span class="text-orange me-1 font-bold">沐浴乳</span>的搜尋結果</p>
+    <p>
+      <span class="text-orange me-1 font-bold">{{ searchText || "全部" }}</span
+      >的搜尋結果
+    </p>
   </div>
   <!-- 按鈕群組區域 -->
   <ButtonGroup

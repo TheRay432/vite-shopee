@@ -3,12 +3,18 @@ import BaseContainer from "@/components/BaseContainer/BaseContainer.vue";
 import InputSearch from "@/components/Input/InputSearch.vue";
 import IconButton from "@/components/IconButton/IconButton.vue";
 import { ref } from "vue";
+import axios from "axios";
+import { useRouter } from "vue-router";
+import router from "@/router";
+
+const route = useRouter();
 
 /** 搜尋文字 */
 const searchText = ref("");
-/** 搜尋事件 */
-function handleSearch(): void {
+/** 搜尋事件  */
+async function handleSearch(): Promise<void> {
   console.log("searchText", searchText.value);
+  router.push({ path: "/search", query: { keyword: searchText.value } });
 }
 </script>
 <template>
